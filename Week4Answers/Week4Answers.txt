@@ -1,6 +1,29 @@
 ---------------------------------------------------------------
 OUTPUT FROM PROBLEM 1
-[PASTE TEXT HERE]
+>>> cars = 100
+>>> drivers = 30
+>>> passengers = 85
+>>> print cars-drivers,"cars will not be used that day."
+70 cars will not be used that day.
+>>> print drivers,"cars will be used that day."
+30 cars will be used that day.
+>>> print drivers+passengers,"people will be transported in this car pool."
+115 people will be transported in this car pool.
+>>> print 85/30,"is the average number of passengers per car driven."
+2 is the average number of passengers per car driven.
+>>> print float(85/30),"is the average number of passengers per car driven."
+2.0 is the average number of passengers per car driven.
+>>> 85/30
+2
+>>> float(85/30
+... )
+2.0
+>>> float(85)/float(30)
+2.8333333333333335
+>>> print float(85)/float(30),"is the average number of passengers per car driven."
+2.83333333333 is the average number of passengers per car driven.
+>>> exit()
+
 ---------------------------------------------------------------
 OUTPUT FROM PROBLEM 2
 pksung2@keeling Week4Answers: $ cat problem2.py
