@@ -26,25 +26,38 @@ OUTPUT FROM PROBLEM 1
 
 ---------------------------------------------------------------
 OUTPUT FROM PROBLEM 2
-pksung2@keeling Week4Answers: $ cat problem2.py
+pksung2@keeling-f01 Week4Answers: $ cat problem2.py
 #!/usr/bin/python
 
 import math
 import sys
 import numbers
 
-if len(sys.argv) == 2:
-        T = float(sys.argv[1])
-        sat = 6.1094 * math.exp(17.625*T/(T+243.04))
-        print 'The saturation vapor pressure temperature is',sat
+a = len(sys.argv)
 
-elif len(sys.argv) > 2:
-        print "Too many values."
+if a == 2:
+        try:
+                T = float(sys.argv[1])
+                sat = 6.1094 * math.exp(17.625*T/(T+243.04))
+                print ('\nThe saturation vapor pressure temperature is:\n{0}\n'.format(sat))
+        except:
+                print 'Please input a valid thing.'
+elif a > 2:
+        print "Too many inputs."
 
 else:
         print "Please input a water temperature."
-pksung2@keeling Week4Answers: $ ./problem2.py 12
-The saturation vapor pressure temperature is 14.0007409049
-pksung2@keeling Week4Answers: $
+pksung2@keeling-f01 Week4Answers: $ ./problem2.py 12
+
+The saturation vapor pressure temperature is:
+14.0007409049
+
+pksung2@keeling-f01 Week4Answers: $ ./problem2.py 12 123
+Too many inputs.
+pksung2@keeling-f01 Week4Answers: $ ./problem2.py asdf
+Please input a valid thing.
+pksung2@keeling-f01 Week4Answers: $ ./problem2.py
+Please input a water temperature.
+pksung2@keeling-f01 Week4Answers: $
 
 ---------------------------------------------------------------
