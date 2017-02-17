@@ -1,5 +1,48 @@
 ---------------------------------------------------------------
 OUTPUT FROM PROBLEM 1
+pksung2@keeling-f01 Week5Answers: $ cat test.py
+#!/usr/bin/python
+
+#defining the filename
+filename='aravg.ann.land_ocean.90S.90N.v4.0.1.201612.asc'
+wxdata = {'year':[],'anomaly':[]}       #define dictionary
+
+#open a file and read its contents
+with open(filename, "r") as f: #read all the lines in the file
+        alist = f.read().splitlines()
+
+#looping over all the lines in the file
+for line in alist: #iterate through lines
+        wxdata['year'].append(int(line.split()[0]))
+        wxdata['anomaly'].append(float(line.split()[1]))
+
+DATA = zip(wxdata['year'],wxdata['anomaly'])
+DATA = sorted(DATA, key=lambda x: x[1], reverse=True)
+
+newfile = open('top10warmest.txt', 'w+')
+print >> newfile, ("Ranking\tYear\tTemperature Anomaly (degrees C)\tTemperature Anomaly (degrees f)")
+
+num = 0
+
+for i in DATA[:10]:
+        num += 1
+        print >> newfile, "{0:1d}.\t{1:4d}\t{2:4f}\t\t\t{3:4f}".format(num, i[0], i[1], i[1]*9/5)
+
+list (newfile)
+pksung2@keeling-f01 Week5Answers: $ python test.py
+pksung2@keeling-f01 Week5Answers: $ cat top10warmest.txt
+Ranking Year    Temperature Anomaly (degrees C) Temperature Anomaly (degrees f)
+1.      2016    0.690951                        1.243712
+2.      2015    0.654480                        1.178064
+3.      2014    0.495471                        0.891848
+4.      2010    0.456035                        0.820863
+5.      2013    0.422519                        0.760534
+6.      2005    0.413196                        0.743753
+7.      2009    0.391374                        0.704473
+8.      1998    0.389096                        0.700373
+9.      2012    0.378706                        0.681671
+10.     2003    0.368062                        0.662512
+pksung2@keeling-f01 Week5Answers: $
 
 ---------------------------------------------------------------
 OUTPUT FROM PROBLEM 2
