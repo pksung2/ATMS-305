@@ -19,7 +19,7 @@ SN=0
 
 #begin incrementing SN counter by searching each string in list
 for i in cdict['presentwx']:
-	if (' SN ' in i) or ('+SN' in i) or ('-SN' in i) or ('SN ' in i):
+	if 'SN' in i:
 		print (i)
 		SN+=1
 
