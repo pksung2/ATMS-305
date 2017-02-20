@@ -6,7 +6,7 @@ cdict = {'station':[],'valid':[],'tmpf':[],'presentwx':[]}
 
 #open file, read its contents
 with open(filename, "r") as f:
-        clist = f.read().splitlines()
+        clist = f.read().splitlines()[1:]
 
 #separate columns into the dictionary keys
 for line in clist:

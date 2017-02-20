@@ -56,7 +56,7 @@ cdict = {'station':[],'valid':[],'tmpf':[],'presentwx':[]}
 
 #open file, read its contents
 with open(filename, "r") as f:
-        clist = f.read().splitlines()
+        clist = f.read().splitlines()[1:]
 
 #separate columns into the dictionary keys
 for line in clist:
@@ -98,7 +98,7 @@ print("Highest temperature: {0}F at {1}".format(temp[0], temp[1]))
 print("Mean temperature: {0:5.2f}F".format(temptotal/total))
 pksung2@keeling Week5Answers: $ python problem2.py
 Total reports of snow: 310
-Fraction of reports with snow: 310/10971
+Fraction of reports with snow: 310/10970
 Highest temperature: 93.92F at 2016-06-11 14:53
 Mean temperature: 54.15F
 pksung2@keeling Week5Answers: $
